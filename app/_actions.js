@@ -81,7 +81,7 @@ export async function deleteEvent(state, formData){
           }
         });
         console.log('Deleted event:', deletedEvent);
-        // revalidatePath("/delete")
+        revalidatePath("/delete")
 
 
         return {
