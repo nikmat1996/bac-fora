@@ -192,6 +192,7 @@ export async function addEvent(formData){
                 age30_: formData.get('age30_')  == "true" ? true: false
             }
         });
+        revalidatePath("/delete")
 
         return {
             success: {
