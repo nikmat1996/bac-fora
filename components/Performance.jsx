@@ -17,7 +17,7 @@ const Performance = () => {
         <Image alt="girl checking stats small" src={performance_sm} className='md:hidden'/>
         <div className='w-full max-w-[629px] '>
             <div className='flex flex-row-reverse justify-center items-center md:flex-col md:items-start'>
-                <Image alt="graph gif" src={performance} className='w-[43px] h-[43px] md:w-[93px] md:h-[93px]'/>
+                <Image alt="graph gif" src={performance} className='w-[43px] h-[43px] md:w-[93px] md:h-[93px]' unoptimized/>
                 <h2 className='text-2xl/9 font-bold pt-[12px] pb-2.5 md:text-[50px] md:leading-[57px] md:pb-[30px] translate-y-1'>{performanceText.h2}</h2>
             </div>
             <p className='text-[15px] leading-5 md:text-xl/10 md:max-w-[480px] mx-auto md:mx-0'>{performanceText.p}</p>

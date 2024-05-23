@@ -18,7 +18,7 @@ const Support = () => {
         <Image alt='kids hug' src={support_img} className='hidden lg:block  self-center w-full scale-125 -translate-y-16 max-w-[400px]'/>
         <div className='w-full lg:max-w-[646px] text-white'>
             <div className='flex flex-col sm:flex-row-reverse  justify-center  '>
-                <Image alt='medal gif' src={support} className='w-[43px] h-[43px] md:w-[93px] md:h-[93px] '/>
+                <Image alt='medal gif' src={support} className='w-[43px] h-[43px] md:w-[93px] md:h-[93px]' unoptimized/>
                 <h2 className='text-2xl/9  font-bold  pb-4 md:pb-7 md:text-[40px] md:leading-normal '>{supportText.h2}</h2>
             </div>
             <p className='text-[15px] leading-5 md:text-xl/10  mx-auto md:mx-0'>{supportText.p}</p>

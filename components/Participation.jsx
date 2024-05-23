@@ -19,6 +19,7 @@ const Participation = () => {
           alt='clock gif'
           src={clockGif}
           className='h-[43px] w-[43px] md:h-[93px] md:w-[93px]'
+          unoptimized
         />
       </div>
         <p className='w-full max-w-[1139px] mx-auto text-[15px] leading-5 md:text-xl/7 text-center pt-0.5 md:pt-3'>
