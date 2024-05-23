@@ -10,6 +10,7 @@ export const GET = async (req, res) => {
   try {
     console.log('testing get')
     const today = new Date()
+    today.setHours(0, 0, 0, 0);
     const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1)
     const monthAfterNext = new Date(
       today.getFullYear(),
