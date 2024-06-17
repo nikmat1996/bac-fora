@@ -3,9 +3,8 @@
 import 'react-time-picker/dist/TimePicker.css'
 import 'react-clock/dist/Clock.css'
 import React, { useState } from 'react'
-import { useFormState, useFormStatus } from 'react-dom'
+import { useFormStatus } from 'react-dom'
 import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 import {
   Select,
   SelectContent,
@@ -25,9 +24,11 @@ import {
   PopoverTrigger
 } from '@/components/ui/popover'
 import { Checkbox } from '@/components/ui/checkbox'
-import TimePicker from 'react-time-picker'
+import dynamic from 'next/dynamic'
 import { addEvent } from '../_actions'
 import { useToast } from '@/components/ui/use-toast'
+
+const TimePicker = dynamic(() => import('react-time-picker'), { ssr: false })
 
 const sports = [
   { value: 'football', label: 'Football' },
@@ -49,14 +50,13 @@ const genderOpt = [
 const Dashboard = () => {
   const [date, setDate] = useState()
   const [value, onChange] = useState('10:00')
-  const [age9_12, setAge9_12] = useState(false);
-  const [age12_15, setAge12_15] = useState(false);
-  const [age15_18, setAge15_18] = useState(false);
-  const [age18_30, setAge18_30] = useState(false);
-  const [age30_, setAge30_] = useState(false);
-  
+  const [age9_12, setAge9_12] = useState(false)
+  const [age12_15, setAge12_15] = useState(false)
+  const [age15_18, setAge15_18] = useState(false)
+  const [age18_30, setAge18_30] = useState(false)
+  const [age30_, setAge30_] = useState(false)
+
   const { toast } = useToast()
-  // console.log(date)
 
   const submitAction = async formData => {
     formData.set('date', date)
@@ -66,7 +66,6 @@ const Dashboard = () => {
     formData.set('age18_30', age18_30)
     formData.set('age30_', age30_)
     const res = await addEvent(formData)
-    // console.log(res)
     if (res.success) {
       toast({
         title: 'Success! ',
@@ -84,7 +83,7 @@ const Dashboard = () => {
   }
 
   return (
-    <section className='mx-auto max-w-4xl border-x-2  py-10'>
+    <section className='mx-auto max-w-4xl border-x-2 py-10'>
       <form
         action={submitAction}
         className='flex flex-col items-center gap-y-10 px-2'

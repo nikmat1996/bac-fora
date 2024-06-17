@@ -263,7 +263,7 @@ const Calender = props => {
       </div>
 
       <Dialog open={showModal} onOpenChange={setShowModal} >
-        <DialogContent className="  rounded-none max-w-4xl p-0 ">
+        <DialogContent className="rounded-none max-w-4xl p-0 ">
           <div className='grid grid-cols-2 '>
             <div className='p-1'>
               <Image src={modalEvent.url} alt='sport image' className='w-full object-cover h-full' unoptimized quality={100} width={100} height={100}/>
@@ -332,9 +332,15 @@ const Calender = props => {
                     strokeLinejoin="round"
                   ></path>
                 </svg>
-                <p className="w-full max-w-[197px] text-xs font-light text-left text-[#84829a]">
-                  <span className="text-left text-[10px] sm:text-[15px] md:text-xl font-light text-[#84829a]">
-                  {modalEvent.address}
+                <p className="w-full text-xs font-light text-left text-[#84829a]">
+                  <span className="w-full text-left text-[10px] sm:text-[15px] md:text-xl font-light text-[#84829a]">
+                    {/* {modalEvent.address} */}
+                    {modalEvent.address?.split('\n').map((line, index) => (
+                      <React.Fragment key={index}>
+                        {line}
+                        <br />
+                      </React.Fragment>
+                    ))}
                   </span>
                   <br />
                   {/* <span className="text-left text-[10px] sm:text-[15px] md:text-xl font-light text-[#84829a]">https://maps.app.com</span> */}
