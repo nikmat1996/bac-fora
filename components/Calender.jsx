@@ -27,6 +27,7 @@ import {
 } from 'date-fns'
 import Image from 'next/image'
 import { Dialog, DialogContent, DialogHeader } from './ui/dialog'
+import Link from 'next/link'
 
 let colStartClasses = [
   '',
@@ -333,7 +334,7 @@ const Calender = props => {
                   ></path>
                 </svg>
                 <p className="w-full text-xs font-light text-left text-[#84829a]">
-                  <span className="w-full text-left text-[10px] sm:text-[15px] md:text-xl font-light text-[#84829a]">
+                  <span className="w-full text-left text-[10px] sm:text-[15px] md:text-lg font-light text-[#84829a]">
                     {/* {modalEvent.address} */}
                     {modalEvent.address?.split('\n').map((line, index) => (
                       <React.Fragment key={index}>
@@ -341,8 +342,11 @@ const Calender = props => {
                         <br />
                       </React.Fragment>
                     ))}
+                    {modalEvent.locationUrl && <Link className='text-base text-blue-500' href={modalEvent.locationUrl} >https://maps.app.google</Link> }
                   </span>
+
                   <br />
+                  
                   {/* <span className="text-left text-[10px] sm:text-[15px] md:text-xl font-light text-[#84829a]">https://maps.app.com</span> */}
                 </p>
               </div>

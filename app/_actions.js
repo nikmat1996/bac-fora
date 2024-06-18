@@ -185,6 +185,7 @@ export async function addEvent(formData){
                 address: formData.get('address'),
                 phone: formData.get('phone'),
                 url: formData.get('url'),
+                locationUrl: formData.get('locationUrl'),
                 age9_12: formData.get('age9_12') == "true" ? true: false,
                 age12_15: formData.get('age12_15')  == "true" ? true: false,
                 age15_18: formData.get('age15_18')  == "true" ? true: false,

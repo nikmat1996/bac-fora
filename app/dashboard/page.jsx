@@ -234,6 +234,13 @@ const Dashboard = () => {
           className='w-full max-w-[400px]'
         />
 
+         <Input
+          type='text'
+          name={'locationUrl'}
+          placeholder='Google Maps link'
+          className='w-full max-w-[400px]'
+        />
+
         <Input
           type='password'
           name={'password'}

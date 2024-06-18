@@ -46,4 +46,5 @@ model Sportevent {
   age15_18 Boolean?
   age18_30 Boolean?
   age30_   Boolean?
+  locationUrl String?
 }
