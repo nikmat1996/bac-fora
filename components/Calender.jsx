@@ -342,7 +342,7 @@ const Calender = props => {
                         <br />
                       </React.Fragment>
                     ))}
-                    {modalEvent.locationUrl && <Link className='text-base text-blue-500' href={modalEvent.locationUrl} >https://maps.app.google</Link> }
+                    {modalEvent.locationUrl && <Link className='text-base text-blue-500' href={modalEvent.locationUrl} target="_blank">https://maps.app.google</Link> }
                   </span>
 
                   <br />
