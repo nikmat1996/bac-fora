@@ -37,7 +37,7 @@ model Sportevent {
   time     String
   gender   String
   category String
-  price    Float
+  price    String
   address  String
   phone    String
   url      String

@@ -181,7 +181,7 @@ export async function addEvent(formData){
                 time: formData.get('time'),
                 gender: formData.get('gender'),
                 category: formData.get('category'),
-                price: parseFloat(formData.get('price')), 
+                price: formData.get('price'), 
                 address: formData.get('address'),
                 phone: formData.get('phone'),
                 url: formData.get('url'),

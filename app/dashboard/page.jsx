@@ -209,7 +209,7 @@ const Dashboard = () => {
         </div>
 
         <Input
-          type='number'
+          type='text'
           name={'price'}
           placeholder='Price'
           className='w-full max-w-[400px]'

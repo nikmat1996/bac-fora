@@ -307,7 +307,7 @@ const Calender = props => {
               <p className="text-left text-[10px] sm:text-[15px] md:text-xl text-[#84829a]">
                 <span className="text-left text-[10px] sm:text-[15px] md:text-xl font-semibold  ">Entry Fee:</span>
                 <span className="text-left text-[10px] sm:text-[15px] md:text-xl font-medium  "> </span>
-                <span className="text-left text-[10px] sm:text-[15px] md:text-xl  ">Rs {modalEvent.price}</span>
+                <span className="text-left text-[10px] sm:text-[15px] md:text-xl  ">{Number(modalEvent.price) == modalEvent.price ? `Rs ${modalEvent.price}`: modalEvent.price}</span>
               </p>
 
               <div className='flex gap-1 sm:gap-2 md:gap-3'>
