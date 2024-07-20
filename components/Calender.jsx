@@ -149,9 +149,11 @@ const Calender = props => {
 
   events.length && events.filter(item => {
 
-    if(!gender || item.gender === "both") {
+    if(!gender || item.gender === "Boys and Girls" || item.gender === "both") {
       return true
     }
+    if(item.gender === "male" && gender === "Boys") return true
+    if(item.gender === "female" && gender === "Girls") return true
     return item.gender === gender
 
   }).filter(item => {
