@@ -293,7 +293,7 @@ const Calender = props => {
 
               <p className="w-full leading-none text-left text-[15px] text-[#84829a] space-x-1 sm:space-x-2 ">
                 <span className="font-semibold text-left text-[10px] sm:text-[15px] md:text-xl ">Gender:</span>
-                <span className=" text-left text-[10px] sm:text-[15px] md:text-xl   capitalize">{modalEvent.gender}</span>
+                <span className=" text-left text-[10px] sm:text-[15px] md:text-xl ">{modalEvent.gender === "both" ? "Boys and Girls": modalEvent.gender === "male" ? "Boys" : modalEvent.gender === "female" ? "Girls": modalEvent.gender}</span>
               </p>
 
               <div className='flex flex-col'>
