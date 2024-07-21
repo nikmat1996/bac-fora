@@ -162,9 +162,31 @@ const Calender = props => {
     return item.sport === sports
 
   }).filter(item => {
+    if (!ageRange) return true;
 
-    if(!ageRange) return true
-    return item[ageRange]
+
+    const ageRangeMap = {
+      ageLessThan7: ['ageLessThan7'],
+      age7: ['age7'],
+      age8: ['age8'],
+      age9: ['age9', 'age9_12'],
+      age10: ['age10', 'age9_12'],
+      age11: ['age11', 'age9_12'],
+      age12: ['age12', 'age12_15'],
+      age13: ['age13', 'age12_15'],
+      age14: ['age14', 'age12_15'],
+      age15: ['age15', 'age15_18'],
+      age16: ['age16', 'age15_18'],
+      age17: ['age17', 'age15_18'],
+      ageGreaterThan18: ['ageGreaterThan18', 'age15_18', 'age18_30', 'age30_']
+    };
+  
+  
+      // Get the corresponding age keys for the given ageRange
+      const relevantAges = ageRangeMap[ageRange] || [];
+  
+      // Check if any of the relevant age keys are true in the item
+      return relevantAges.some(ageKey => item[ageKey] === true);
 
   })
   .forEach(event => {
@@ -177,7 +199,7 @@ const Calender = props => {
     else eventsObj[event.date] = [event]
   })
 
-  // console.log("modalEvent", modalEvent)
+  console.log("eventsObj", eventsObj)
 
   return (
     <section className='mx-auto w-full max-w-[1139px] px-5 pb-16 pt-2.5 md:pt-9 xl:px-0'>

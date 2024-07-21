@@ -17,26 +17,32 @@ const data = {
   gender: {
     label: 'Gender',
     options: [
-      // { value: 'none', label: 'Gender' },
       { value: 'male', label: 'Boys' },
       { value: 'female', label: 'Girls' },
+      { value: 'both', label: 'Both' }, // Added 'both' option
     ]
   },
   ageRange: {
     label: 'Age',
     options: [
-      // { value: 'none', label: 'All' },
-      { value: 'age9_12', label: '9 - 12' },
-      { value: 'age12_15', label: '12 - 15' },
-      { value: 'age15_18', label: '15 - 18' },
-      { value: 'age18_30', label: '18 - 30' },
-      { value: 'age30_', label: 'Above 30' },
+      { value: 'ageLessThan7', label: 'Less than 7' },
+      { value: 'age7', label: '7' },
+      { value: 'age8', label: '8' },
+      { value: 'age9', label: '9' },
+      { value: 'age10', label: '10' },
+      { value: 'age11', label: '11' },
+      { value: 'age12', label: '12' },
+      { value: 'age13', label: '13' },
+      { value: 'age14', label: '14' },
+      { value: 'age15', label: '15' },
+      { value: 'age16', label: '16' },
+      { value: 'age17', label: '17' },
+      { value: 'ageGreaterThan18', label: 'Above 18' },
     ]
   },
   sports: {
     label: 'Sports',
     options: [
-      // { value: 'none', label: 'All' },
       { value: 'football', label: 'Football' },
       { value: 'badminton', label: 'Badminton' },
       { value: 'basketball', label: 'Basketball' },
