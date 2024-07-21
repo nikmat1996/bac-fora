@@ -31,20 +31,33 @@ model User {
 }
 
 model Sportevent {
-  id       Int       @id @default(autoincrement())
-  sport    String
-  date     DateTime?
-  time     String
-  gender   String
-  category String
-  price    String
-  address  String
-  phone    String
-  url      String
-  age9_12  Boolean?
-  age12_15 Boolean?
-  age15_18 Boolean?
-  age18_30 Boolean?
-  age30_   Boolean?
-  locationUrl String?
+  id             Int       @id @default(autoincrement())
+  sport          String
+  date           DateTime?
+  time           String
+  gender         String
+  category       String
+  price          String
+  address        String
+  phone          String
+  url            String
+  age9_12        Boolean?
+  age12_15       Boolean?
+  age15_18       Boolean?
+  age18_30       Boolean?
+  age30_         Boolean?
+  locationUrl    String?
+  ageLessThan7   Boolean?
+  age7           Boolean?
+  age8           Boolean?
+  age9           Boolean?
+  age10          Boolean?
+  age11          Boolean?
+  age12          Boolean?
+  age13          Boolean?
+  age14          Boolean?
+  age15          Boolean?
+  age16          Boolean?
+  age17          Boolean?
+  ageGreaterThan18 Boolean?
 }
