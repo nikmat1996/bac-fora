@@ -50,21 +50,37 @@ const genderOpt = [
 const Dashboard = () => {
   const [date, setDate] = useState()
   const [value, onChange] = useState('10:00')
-  const [age9_12, setAge9_12] = useState(false)
-  const [age12_15, setAge12_15] = useState(false)
-  const [age15_18, setAge15_18] = useState(false)
-  const [age18_30, setAge18_30] = useState(false)
-  const [age30_, setAge30_] = useState(false)
+  const [ageLessThan7, setAgeLessThan7] = useState(false)
+  const [age7, setAge7] = useState(false)
+  const [age8, setAge8] = useState(false)
+  const [age9, setAge9] = useState(false)
+  const [age10, setAge10] = useState(false)
+  const [age11, setAge11] = useState(false)
+  const [age12, setAge12] = useState(false)
+  const [age13, setAge13] = useState(false)
+  const [age14, setAge14] = useState(false)
+  const [age15, setAge15] = useState(false)
+  const [age16, setAge16] = useState(false)
+  const [age17, setAge17] = useState(false)
+  const [ageGreaterThan18, setAgeGreaterThan18] = useState(false)
 
   const { toast } = useToast()
 
   const submitAction = async formData => {
     formData.set('date', date)
-    formData.set('age9_12', age9_12)
-    formData.set('age12_15', age12_15)
-    formData.set('age15_18', age15_18)
-    formData.set('age18_30', age18_30)
-    formData.set('age30_', age30_)
+    formData.set('ageLessThan7', ageLessThan7)
+    formData.set('age7', age7)
+    formData.set('age8', age8)
+    formData.set('age9', age9)
+    formData.set('age10', age10)
+    formData.set('age11', age11)
+    formData.set('age12', age12)
+    formData.set('age13', age13)
+    formData.set('age14', age14)
+    formData.set('age15', age15)
+    formData.set('age16', age16)
+    formData.set('age17', age17)
+    formData.set('ageGreaterThan18', ageGreaterThan18)
     const res = await addEvent(formData)
     if (res.success) {
       toast({
@@ -155,55 +171,135 @@ const Dashboard = () => {
           className='w-full max-w-[400px]'
         />
 
-        <div className='flex w-full max-w-[400px] items-center justify-evenly space-x-2'>
-          <div>
-            <Checkbox id='9-12' name="test" checked={age9_12} onClick={() => setAge9_12(x => !x)}/>
+        <div className='flex flex-wrap w-full max-w-[400px] items-center gap-x-4 gap-y-3'>
+          <div className='flex items-center gap-x-1'>
+            <Checkbox id='less-than-7' name="less-than-7" checked={ageLessThan7} onClick={() => setAgeLessThan7(x => !x)}/>
             <label
-              name="9-12"
-              htmlFor='9-12'
-              className='text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              name="less-than-7"
+              htmlFor='less-than-7'
+              className='cursor-pointer text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
-              9 - 12
+              Less than 7
             </label>
           </div>
-          <div>
-            <Checkbox id='12-15' name="12-15" checked={age12_15} onClick={() => setAge12_15(x => !x)}/>
+          <div className='flex items-center gap-x-1'>
+            <Checkbox id='age-7' name="age-7" checked={age7} onClick={() => setAge7(x => !x)}/>
             <label
-              name="12-15"
-              htmlFor='12-15'
-              className='text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              name="age-7"
+              htmlFor='age-7'
+              className='cursor-pointer text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
-              12 - 15
+              7
             </label>
           </div>
-          <div>
-            <Checkbox id='15-18' checked={age15_18} onClick={() => setAge15_18(x => !x)}/>
+          <div className='flex items-center gap-x-1'>
+            <Checkbox id='age-8' name="age-8" checked={age8} onClick={() => setAge8(x => !x)}/>
             <label
-              name="15-18"
-              htmlFor='15-18'
-              className='text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              name="age-8"
+              htmlFor='age-8'
+              className='cursor-pointer text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
-              15 - 18
+              8
             </label>
           </div>
-          <div>
-            <Checkbox id='18-30' checked={age18_30} onClick={() => setAge18_30(x => !x)}/>
+          <div className='flex items-center gap-x-1'>
+            <Checkbox id='age-9' name="age-9" checked={age9} onClick={() => setAge9(x => !x)}/>
             <label
-              name="18-30"
-              htmlFor='18-30'
-              className='text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              name="age-9"
+              htmlFor='age-9'
+              className='cursor-pointer text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
-              18 - 30
+              9
             </label>
           </div>
-          <div>
-            <Checkbox id='30-' checked={age30_} onClick={() => setAge30_(x => !x)}/>
+          <div className='flex items-center gap-x-1'>
+            <Checkbox id='age-10' name="age-10" checked={age10} onClick={() => setAge10(x => !x)}/>
             <label
-              name="30-"
-              htmlFor='30-'
-              className='text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              name="age-10"
+              htmlFor='age-10'
+              className='cursor-pointer text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
-              30 Above
+              10
+            </label>
+          </div>
+          <div className='flex items-center gap-x-1'>
+            <Checkbox id='age-11' name="age-11" checked={age11} onClick={() => setAge11(x => !x)}/>
+            <label
+              name="age-11"
+              htmlFor='age-11'
+              className='cursor-pointer text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              >
+              11
+            </label>
+          </div>
+          <div className='flex items-center gap-x-1'>
+          <Checkbox id='age-12' name="age-12" checked={age12} onClick={() => setAge12(x => !x)}/>
+            <label
+              name="age-12"
+              htmlFor='age-12'
+              className='cursor-pointer text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              >
+              12
+            </label>
+          </div>
+          <div className='flex items-center gap-x-1'>
+            <Checkbox id='age-13' name="age-13" checked={age13} onClick={() => setAge13(x => !x)}/>
+            <label
+              name="age-13"
+              htmlFor='age-13'
+              className='cursor-pointer text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              >
+              13
+            </label>
+          </div>
+          <div className='flex items-center gap-x-1'>
+            <Checkbox id='age-14' name="age-14" checked={age14} onClick={() => setAge14(x => !x)}/>
+            <label
+              name="age-14"
+              htmlFor='age-14'
+              className='cursor-pointer text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              >
+              14
+            </label>
+          </div>
+          <div className='flex items-center gap-x-1'>
+            <Checkbox id='age-15' name="age-15" checked={age15} onClick={() => setAge15(x => !x)}/>
+            <label
+              name="age-15"
+              htmlFor='age-15'
+              className='cursor-pointer text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              >
+              15
+            </label>
+          </div>
+          <div className='flex items-center gap-x-1'>
+            <Checkbox id='age-16' name="age-16" checked={age16} onClick={() => setAge16(x => !x)}/>
+            <label
+              name="age-16"
+              htmlFor='age-16'
+              className='cursor-pointer text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              >
+              16
+            </label>
+          </div>
+          <div className='flex items-center gap-x-1'>
+            <Checkbox id='age-17' name="age-17" checked={age17} onClick={() => setAge17(x => !x)}/>
+            <label
+              name="age-17"
+              htmlFor='age-17'
+              className='cursor-pointer text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              >
+              17
+            </label>
+          </div>
+          <div className='flex items-center gap-x-1'>
+            <Checkbox id='greater-than-18' name="greater-than-18" checked={ageGreaterThan18} onClick={() => setAgeGreaterThan18(x => !x)}/>
+            <label
+              name="greater-than-18"
+              htmlFor='greater-than-18'
+              className='cursor-pointer text-sm font-medium text-[#64748B] leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+              >
+              Greater than 18
             </label>
           </div>
         </div>

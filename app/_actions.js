@@ -163,14 +163,12 @@ export async function saveContact(state, formData){
 
 
 export async function addEvent(formData){
-    // console.log(process.env.DATABASE_URL)
-
     if(formData.get('password') !== process.env.PASSWORD){
         return {
             error: {
                 message: "Wrong Password"
             }
-        }
+        };
     }
 
     try {
@@ -186,26 +184,33 @@ export async function addEvent(formData){
                 phone: formData.get('phone'),
                 url: formData.get('url'),
                 locationUrl: formData.get('locationUrl'),
-                age9_12: formData.get('age9_12') == "true" ? true: false,
-                age12_15: formData.get('age12_15')  == "true" ? true: false,
-                age15_18: formData.get('age15_18')  == "true" ? true: false,
-                age18_30: formData.get('age18_30')  == "true" ? true: false,
-                age30_: formData.get('age30_')  == "true" ? true: false
+                ageLessThan7: formData.get('ageLessThan7') === "true",
+                age7: formData.get('age7') === "true",
+                age8: formData.get('age8') === "true",
+                age9: formData.get('age9') === "true",
+                age10: formData.get('age10') === "true",
+                age11: formData.get('age11') === "true",
+                age12: formData.get('age12') === "true",
+                age13: formData.get('age13') === "true",
+                age14: formData.get('age14') === "true",
+                age15: formData.get('age15') === "true",
+                age16: formData.get('age16') === "true",
+                age17: formData.get('age17') === "true",
+                ageGreaterThan18: formData.get('ageGreaterThan18') === "true",
             }
         });
-        revalidatePath("/delete")
+        revalidatePath("/delete");
 
         return {
             success: {
-               event
+                event
             }
-        }
+        };
     } catch (error) {
-        console.log(error?.message)
         return {
             error: {
                 message: error?.message
             }
-        }
+        };
     }
 }
