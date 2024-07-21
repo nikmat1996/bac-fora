@@ -18,8 +18,8 @@ const data = {
     label: 'Gender',
     options: [
       // { value: 'none', label: 'Gender' },
-      { value: 'Boys', label: 'Boys' },
-      { value: 'Girls', label: 'Girls' },
+      { value: 'male', label: 'Boys' },
+      { value: 'female', label: 'Girls' },
     ]
   },
   ageRange: {

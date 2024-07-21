@@ -42,9 +42,9 @@ const sports = [
 ]
 
 const genderOpt = [
-  { value: 'Boys', label: 'Boys' },
-  { value: 'Girls', label: 'Girls' },
-  { value: 'Boys and Girls', label: 'Boys and Girls' }
+  { value: 'male', label: 'Boys' },
+  { value: 'female', label: 'Girls' },
+  { value: 'both', label: 'Boys and Girls' }
 ]
 
 const Dashboard = () => {
